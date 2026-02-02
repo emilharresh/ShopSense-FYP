@@ -4,7 +4,6 @@ import numpy as np
 import pickle
 import time
 import os
-from sklearn.metrics.pairwise import linear_kernel
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
