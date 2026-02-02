@@ -37,7 +37,7 @@ st.markdown(f"""
 <style>
     /* Global Spacing Reduction */
     .block-container {{
-        padding-top: 2rem !important;
+        padding-top: 4.5rem !important;
         padding-bottom: 3rem !important;
     }}
     
@@ -311,6 +311,9 @@ def get_hybrid_recs(uid, history_items=None, n=12):
 def go_home():
     st.session_state.page = 'home'
     st.session_state.selected_product = None
+    # Reset Filters
+    if 'cat_filter' in st.session_state: st.session_state.cat_filter = "All"
+    if 'search_query' in st.session_state: st.session_state.search_query = ""
 
 def go_product(idx):
     st.session_state.page = 'product'
@@ -520,6 +523,8 @@ def page_product_detail():
                 update_user_db() # Persist cart after adding item
                 
                 st.toast("Added to Cart!")
+                time.sleep(0.5) # Short pause for toast visibility
+                st.rerun()
 
     # Compact Recommendations
     st.write("")
@@ -592,14 +597,14 @@ def page_home():
     render_sidebar()
     
     # Search Bar
-    search = st.text_input("", placeholder="Search for products...", label_visibility="collapsed")
+    search = st.text_input("", placeholder="Search for products...", label_visibility="collapsed", key="search_query")
     
     # Sidebar Filters
     with st.sidebar:
         st.markdown("### Filters")
         if 'category' in df.columns:
             cats = ["All"] + list(sorted(df['category'].unique()))
-            selected_cat = st.selectbox("Category", cats, index=0)
+            selected_cat = st.selectbox("Category", cats, index=0, key="cat_filter")
         else:
             selected_cat = "All"
             
