@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSense - Intelligent E-Commerce Recommendations</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <div class="logo-container">
+            <h1 class="logo-text">ShopSense<span class="dot">.</span></h1>
+        </div>
+        <a href="http://localhost:8501" class="nav-btn demo-btn">Try Demo <i class="fas fa-arrow-right"></i></a>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="parallax-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Intelligent<br><span class="gradient-text">Discovery</span></h1>
+                <p class="hero-subtitle">Bridging Accuracy and Discovery with Hybrid Machine Learning</p>
+                <div class="hero-actions">
+                    <a href="http://localhost:8501" class="cta-btn pulse">Experience Protoype</a>
+                    <a href="#project-info" class="secondary-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <i class="fas fa-brain"></i>
+                    <span>Hybrid AI</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-bolt"></i>
+                    <span>Real-time</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>19k+ Products</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Info Section -->
+        <section id="project-info" class="info-section">
+            <div class="glass-card info-container">
+                <h2>Project Details</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Student Name</span>
+                        <span class="value">Emil Harresh bin Mohd Salleh Suresh</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Student ID</span>
+                        <span class="value">2024916797</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Email</span>
+                        <span class="value">emilharresh@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Supervisor</span>
+                        <span class="value">DR AZLIN BINTI AHMAD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="section-header">
+                <span class="tag">The Problem & Solution</span>
+                <h2>Why ShopSense?</h2>
+            </div>
+            <div class="dual-col">
+                <div class="text-block">
+                    <p>
+                        <strong>ShopSense</strong> is a recommendation system designed to solve the "Cold Start" problem in e-commerce.
+                        While traditional Collaborative Filtering (KNN) offers high accuracy, it fails with new products.
+                    </p>
+                    <p>
+                        Our <strong>Hybrid Architecture (CBF + KNN)</strong> combines the best of both worlds:
+                        ensuring 100% item coverage using metadata while leveraging user behavior for personalized discovery.
+                    </p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <i class="fas fa-snowflake"></i>
+                        <h3>Solves Cold Start</h3>
+                        <p>Immediate visibility for new inventory.</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>High Accuracy</h3>
+                        <p>Maintains 84%+ prediction accuracy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology -->
+        <section id="methodology" class="steps-section">
+            <div class="section-header">
+                <h2>Methodology</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>1. Data Collection</h3>
+                        <p>Acquisition of the Amazon Products Dataset (390k+ rows) containing metadata and ratings.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>2. Data Preprocessing</h3>
+                        <p>Cleaning, TF-IDF Vectorization, and generation of 12k Synthetic Users.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>3. Model Development</h3>
+                        <p>Training 7 algorithms including CBF, KNN, SVD, MLP, XGBoost, and Hybrid models.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>4. Prototype</h3>
+                        <p>Development of the "ShopSense" web application using Streamlit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="results-section">
+            <div class="section-header">
+                <h2>Experimental Results</h2>
+            </div>
+            
+            <div class="results-container">
+                <div class="table-wrapper">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>RMSE (Lower is Better)</th>
+                                <th>Accuracy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>KNN</td>
+                                <td class="best">0.6276</td>
+                                <td class="best">88.15%</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>2</td>
+                                <td><strong>Hybrid (CBF+KNN)</strong></td>
+                                <td><strong>0.6890</strong></td>
+                                <td><strong>84.22%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>MLP</td>
+                                <td>0.7998</td>
+                                <td>87.35%</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>XGBoost</td>
+                                <td>0.8015</td>
+                                <td>86.21%</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Hybrid (SVD+XGB)</td>
+                                <td>0.8040</td>
+                                <td>86.38%</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>SVD</td>
+                                <td>0.8091</td>
+                                <td>86.40%</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>CBF</td>
+                                <td>0.8895</td>
+                                <td>77.94%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="key-finding">
+                    <h3>💡 Key Finding</h3>
+                    <p>
+                        Although <strong>KNN</strong> achieved the highest statistical accuracy, 
+                        the <strong>Hybrid model</strong> was selected for the final prototype. 
+                        It offers a critical balance: <strong>84.22% accuracy</strong> with <strong>100% catalog coverage</strong>, 
+                        solving the cold start issue that pure KNN cannot address.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <h2>ShopSense<span class="dot">.</span></h2>
+                <p>Final Year Project Prototype 2026</p>
+                <a href="#hero" class="back-to-top">Back to Top</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
